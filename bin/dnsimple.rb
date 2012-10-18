@@ -47,6 +47,10 @@ delete domain.com                                           # Delete the given d
 clear domain.com                                            # Remove all records from the domain 
 apply domain.com template_short_name                        # Apply a template to the domain
 
+membership:add domain.com email                             # Add email to domain's memberships list
+membership:delete domain.com email                          # Delete email from domain's memberships list
+membership:list domain.com                                  # List domain's memberships
+
 record:describe domain.com record_id                        # Describe the given record
 record:create [--prio=priority] domain.com name type \\
   content [ttl]                                             # Create the DNS record on the domain

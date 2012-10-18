@@ -34,6 +34,10 @@ module DNSimple
         'delete' => DNSimple::Commands::DeleteDomain,
         'clear' => DNSimple::Commands::ClearDomain,
         'apply' => DNSimple::Commands::ApplyTemplate,
+        
+        'membership:add' => DNSimple::Commands::MembershipAdd,
+        'membership:delete' => DNSimple::Commands::MembershipDelete,
+        'membership:list' => DNSimple::Commands::MembershipList,
 
         'record:describe' => DNSimple::Commands::DescribeRecord,
         'record:create' => DNSimple::Commands::CreateRecord,
@@ -84,6 +88,9 @@ require 'dnsimple/commands/list_domains'
 require 'dnsimple/commands/delete_domain'
 require 'dnsimple/commands/clear_domain'
 require 'dnsimple/commands/apply_template'
+require 'dnsimple/commands/membership_add'
+require 'dnsimple/commands/membership_delete'
+require 'dnsimple/commands/membership_list'
 
 require 'dnsimple/commands/describe_record'
 require 'dnsimple/commands/create_record'
