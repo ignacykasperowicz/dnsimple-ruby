@@ -93,28 +93,24 @@ module DNSimple
       options.merge!(:body => {:membership => {:email => email}})
       response = DNSimple::Client.post("domains/#{name}/memberships", options)
 
-      # TODO: There is no RESPONSE defined in DNSimple API
-      #       see: http://developer.dnsimple.com/domains/sharing/
-      # case response.code
-      # when 200
-      #   true
-      # else
-      #   raise RequestError, "Error adding new membership", response
-      # end      
+      case response.code
+      when 201
+        true
+      else
+        raise RequestError, "Error adding new membership", response
+      end      
     end
 
     # Remove membership e-mail
     def delete_membership(email, options={})
       response = DNSimple::Client.delete("domains/#{name}/memberships/#{email}", options)
 
-      # TODO: There is no RESPONSE defined in DNSimple API
-      #       see: http://developer.dnsimple.com/domains/sharing/
-      # case response.code
-      # when 200
-      #   true
-      # else
-      #   raise RequestError, "Error deleting membership", response
-      # end      
+      case response.code
+      when 200
+        true
+      else
+        raise RequestError, "Error deleting membership", response
+      end      
     end
 
     # Check the availability of a name
